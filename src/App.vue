@@ -18,7 +18,7 @@ export default {
       }
       this.firstArray.push(this.text),
         this.text = ''
-        console.log(this.sumCount);
+      console.log(this.sumCount);
     },
     removeLastStudent() {
       this.firstArray.pop()
@@ -42,33 +42,7 @@ export default {
 
 
 <template>
-  <header>
-    <div>
-      <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-      a
-    </div>
-    <div class="wrapper">
-      <button @click="count--">-</button>/>
-      <h1 :class="count > 10 ? 'green' : ''">{{ count }}</h1>
-      <button @click="count++">+</button>
-    </div>
-    <div class="wrapper">
-      <button @click="count2--">-</button>/>
-      <h1 :class="count > 10 ? 'green' : ''">{{ count }}</h1>
-      <button @click="count2++">+</button>
-    </div>
-    <p>A soma desses dois valores é {{ sumCount }}</p>
-    <section>
-      <input type="text" v-model="text" @keyup.enter="assStudent()">
-      <button :disabled="firstArray.lenght >= 10" @click="addStudent()">Adicionar nome!</button>
-      <p style="color: red;" v-show="firstArray.lenght >= 10">Limite de itens atingido!</p>
-      <button @click="removeLastStudent()">Remover nome!</button>
-      <div v-for="(student, index) in firstArray" :key="student">
-        <span>{{ student }}</span>
-        <button @click="removeStudent(index)">Remover {{ student }}</button>
-      </div>
-    </section>
-  </header>
+  
   <RouterView />
 </template>
 
